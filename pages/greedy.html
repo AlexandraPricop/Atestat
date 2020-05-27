@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/brands.min.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <title>Greedy</title>
+</head>
+<body> 
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="../index.html">
+             <span class="logo">
+                <i class="fas fa-laptop-code"></i>
+             </span>   
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./backtracking.html"> Backtracking</a>
+                  </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="./greedy.html"> Greedy </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Grafuri
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="./grafuri-neorientate.html">Grafuri neorientate</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="./grafuri-orientate.html">Grafuri orientate</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./pages/greedy.html">Tutoriale</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./tutoriale.html">Tutoriale</a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <div class="container">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+              <h3 class="panel-title">Metoda Greedy </h3>
+            </div>
+
+            <div class="panel-body">
+                <p>
+                    Metoda Greedy este o metodă care poate fi uneori folosită în rezolvarea problemelor de următorul tip: Se dă o mulțime A. Să se determine o submulțime B a lui A astfel încât să fie îndeplinite anumite condiții – acestea depinzând de problema propriu-zisă.
+                </p>
+
+                <h4>
+                    Algoritm general
+                </h4>
+
+                <p>
+                    De regulă problema dată poate fi rezolvată prin mai multe metode, printre care și Greedy. O rezolvare generală de tip Greedy a problemei de mai sus este următoarea:
+                </p>
+
+
+                <code>
+                    
+                    B ← ∅ <br>
+                    terminat ← FALSE <br>
+                    Execută  <br>
+                        Alege convenabil x ∈ A <br>
+                        Dacă x poate fi adăugat în B Atunci <br>
+                            B ← B ∪ {x} <br>
+                        Altfel <br>
+                            terminat ← TRUE <br>
+                        SfârșitDacă <br>
+                    Cât timp terminat=FALSE <br>
+                </code>
+
+                <p>
+                    Altfel spus, pornim de la mulțimea vidă și adăugăm în mod repetat în B elemente până când acest lucru nu mai este posibil.
+                </p>
+
+                <h4>
+                    Observatii
+                </h4>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        stabilirea elementului care va fi adăugat în soluția B se face alegându-l pe cel mai bun din acel moment – este un optim local. Din acest motiv se numește Greedy (lacom)
+                    </li>
+                    <li class="list-group-item">
+                        după adăugarea în soluția B a unui anumit element, acesta va rămâne în soluție până la final. Nu există un mecanism de revenire la la un pas anterior, precum la metoda Backtracking
+                    </li>
+                    <li class="list-group-item">
+                        alegerea optimului local nu duce întotdeauna la cea mai bună soluție B; metoda Greedy nu este întotdeauna corectă
+                    </li>
+                    <li class="list-group-item">
+                        schema prezentată mai sus este vagă și nu poate fi standardizată – să avem un algoritm detaliat care să poată fi aplicat de fiecare dată
+                    </li>
+                    <li class="list-group-item">
+                        sunt relativ puține probleme care pot fi rezolvate cu metoda Greedy
+                    </li>
+                    <li class="list-group-item">
+                        complexitatea metodei este de regulă polinomială – O(nk), unde k este constant
+                    </li>
+                    <li class="list-group-item">
+                        folosim metoda Greedy în două situații
+                        <br>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                știm sigur că rezolvarea este corectă (avem o demonstrație de natură matematică a corectitudinii)
+                            </li>
+                            <li class="list-group-item">
+                                nu avem decât soluții exponențiale (de tip Backtracking) și un algoritm Greedy dă o soluție nu neapărat optimă, dar acceptabilă
+                            </li>
+
+                          </ul>
+                    </li>
+                    <li class="list-group-item">
+                        de regulă, înainte de începe alegerea elementelor convenabile din mulțimea A, elementele sale sunt ordonate după un criteriu specific, astfel încât alegerea optimului local să fie cât mai rapidă
+                    </li>
+                  </ul>
+
+                  <h4>
+                    Există câteva probleme celebre de algoritmică ce pot fi rezolvate cu metoda Greedy:
+                  </h4>
+
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                        Problema spectacolelor
+                    </li>
+                    <li class="list-group-item">
+                        Problema continuă a rucsacului
+                    </li>
+                    <li class="list-group-item">
+                        Algoritmul lui Dijkstra pentru determinarea drumurilor de cost minim într-un graf
+                    </li>
+                    <li class="list-group-item">
+                        Algoritmul lui Prim și Algoritmul lui Kruskal pentru determinarea arborelui parțial de cost minim al unui graf
+                    </li>
+
+                  </ul>
+
+
+
+            </div>
+
+          </div>
+
+
+
+    </div>
+    <footer class="page-footer font-small blue">
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://alexandrapricop.github.io/portfolio/">PRICOP ALEXANDRA-GEORGIANA</a>
+      </div>
+  </footer>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</body>
+</html>

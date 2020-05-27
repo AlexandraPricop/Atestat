@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/brands.min.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <title>Backtracking</title>
+</head>
+<body> 
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="../index.html">
+             <span class="logo">
+                <i class="fas fa-laptop-code"></i>
+             </span>   
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html"> <i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="./backtracking.html">Backtracking</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./greedy.html">Greedy</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Grafuri
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Grafuri neorientate</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="grafuri-orientate.html">Grafuri orientate</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./tutoriale.html">Tutoriale</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <div class="container">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+              <h3 class="panel-title">Metoda Backtracking </h3>
+            </div>
+
+            <div class="panel-body">
+                <p>
+                    Metoda backtracking poate fi folosită în rezolvarea a diverse probleme. Este o metodă lentă, dar de multe ori este singura pe care o avem la dispoziție!
+                </p>
+                <h4>
+                    Metoda backtracking poate fi aplicată în rezolvarea problemelor care respectă următoarele condiții:
+                </h4>
+                <ul class="list-group">
+                    <li class="list-group-item">soluția poate fi reprezentată printr-un tablou x[]=(x[1], x[2], ..., x[n]), fiecare element x[i] aparținând unei mulțimi cunoscute Ai;</li>
+                    <li class="list-group-item">fiecare mulțime Ai este finită, iar elementele ei se află într-o relație de ordine precizată – de multe ori cele n mulțimi sunt identice;</li>
+                    <li class="list-group-item">se cer toate soluțiile problemei sau se cere o anumită soluție care nu poate fi determinată într-un alt mod (de regulă mai rapid).</li>
+                  </ul>
+
+                  <h4>
+                    Algoritmul de tip backtracking construiește vectorul x[] (numit vector soluție) astfel:
+                  </h4>
+
+                  <p>
+                    Fiecare pas k, începând de la pasul 1, se prelucrează elementul curent x[k] al vectorului soluție:
+                  </p>
+                  <ul class="list-group">
+                    <li class="list-group-item">x[k] primește pe rând valori din mulțimea corespunzătoare Ak;</li>
+                    <li class="list-group-item">la fiecare pas se verifică dacă configurația curentă a vectorului soluție poate duce la o soluție finală – dacă valoarea lui x[k] este corectă în raport cu x[1], x[2], … x[k-1] </li>
+                    <li class="list-group-item">dacă valoarea nu este corectă, elementul curent X[k] primește următoarea valoare din Ak sau revenim la elementul anterior x[k-1], dacă X[k] a primit toate valorile din Ak – pas înapoi</li>
+                    <li class="list-group-item">dacă valoarea lui x[k] este corectă (avem o soluție parțială), se verifică existența unei soluții finale a problemei</li>
+                    <li class="list-group-item">dacă configurația curentă a vectorului soluție x reprezintă soluție finală (de regulă) o afișăm;</li>
+                    <li class="list-group-item">dacă nu am identificat o soluție finală trecem la următorul element, x[k+1], și reluăm procesul pentru acest element – pas înainte.</li>
+                  </ul>
+                  <p>
+                    Pe măsură ce se construiește, vectorul soluție x[] reprezită o soluție parțială a problemei. Când vectorul soluție este complet construit, avem o soluție finală a problemei.
+                  </p>
+
+
+                  <h4>
+                    Algoritmul general:
+                  </h4>
+                <p>
+                    Metoda backtracking poate fi implementată iterativ sau recursiv. În ambele situații se se folosește o structură de deate de tip stivă. În cazul implementării iterative, stiva trebuie gestionată intern în algoritm – ceea ce poate duce la dificulăți în implementăre. În cazul implementării recursive se folosește spațiu de memorie de tip stivă – STACK alocat programului; implementarea recursivă este de regulă mai scurtă și mai ușor de înțeles. Acest articol prezintă implementări recursive ale metodei.
+                </p>
+                <p>
+                    Următorul subprogram recursiv prezintă algoritmul la modul general:
+                </p>
+                <ul class="list-group">
+                    <li class="list-group-item">la fiecare apel BACK(k) se generează valori pentru elementul x[k] al vectorului soluție;</li>
+                    <li class="list-group-item">instrucțiunea Pentru modelează condițiile externe;</li>
+                    <li class="list-group-item">subprogramul OK(k) verifică condițiile interne</li>
+                    <li class="list-group-item">subprogramul Solutie(k) verifică dacă configurația curentă a vectorului soluție reprezintă o soluție finală</li>
+                    <li class="list-group-item">subprogramul Afisare(k) tratează soluția curentă a problemei – de exemplu o afișează!</li>
+                  </ul>
+
+                  <code>
+                    Subprogram BACK(k) <br>
+                    Pentru fiecare element i din A[k] Execută <br>
+                        x[k] ← i <br>
+                        Dacă OK(k) Atunci <br>
+                            Dacă Solutie(k) Atunci <br>
+                                Afisare(k) <br>
+                            Altfel <br>
+                                BACK(k+1) <br>
+                            SfărșitDacă <br>
+                        SfărșitDacă <br>
+                    SfarșitPentru <br>
+                SfârșitSubprogram <br>
+                  </code>
+
+                  <h4>
+                    Observatii
+                  </h4>
+
+                  <ul class="list-group">
+                    <li class="list-group-item">de cele mai multe ori mulțimile A sunt de forma A={1,2,3,….,n} sau A={1,2,3,….,m} sau A={a,a+1,a+2,….,b} sau o altă formă astfel încât să putem scrie instrucțiunea Pentru conform specificului limbajului de programare folosit – eventual folosind o structură repetitivă de alt tip! Dacă este necesar, trebuie realizate unele transformări încât mulțimile să ajungă la această formă!</li>
+                    <li class="list-group-item">elementele mulțimii A pot fi in orice ordine. Contează însă ordinea în care le vom parcurge în instrucțiunea Pentru, deoarece în probleme este precizată de obicei o anumită ordine în care trebuie generate soluțiile</li>
+                    <li class="list-group-item">în anumite probleme determinarea unei soluții finale nu conduce la întreruperea apelurilor recursive. Un exemplu este generarea submulțimilor unei mulțimi. În acest caz algoritmul de mai sus poate fi modificat astfel:</li>
+                    
+                  </ul>
+
+                  <code>
+                    Dacă OK(k) Atunci <br>
+                    Dacă Solutie(k) Atunci <br>
+                        Afisare(k) <br>
+                    SfărșitDacă <br>
+                    BACK(k+1) <br>
+                SfărșitDacă <br>
+                  </code>
+
+                  <h4>
+                    Sablon C++
+                  </h4>
+
+                  <code>
+                    #include <fstream>
+                        using namespace std; <br>
+                        <br>
+                        int x[10] ,n; <br>
+                        <br>
+                        int Solutie(int k){ <br>
+                            // x[k] verifică condițiile interne <br>
+                            // verificare dacă x[] reprezintă o soluție finală <br>
+                            return 1; // sau 0 <br>
+                        } <br>
+                        <br>
+                        int OK(int k){ <br>
+                            // verificare conditii interne <br>
+                            return 1; // sau 0 <br>
+                        } <br>
+                        <br>
+                        void Afisare(int k) <br>
+                        { <br>
+                            // afișare/prelucrare soluția finală curentă <br>
+                        } <br>
+                        <br>
+                        void Back(int k){ <br>
+                            for(int i = A ; i <= B ; ++i) <br>
+                            { <br>
+                                x[k]=i; <br>
+                                if( OK(k) ) <br>
+                                    if(Solutie(k)) <br>
+                                        Afisare(k); <br>
+                                    else <br>
+                                        Back(k+1); <br>
+                            } <br>
+                        } <br>
+                        int main(){ <br>
+                            //citire date de intrare <br>
+                            Back(1); <br>
+                            return 0; <br>
+                        } <br>
+                  </code>
+
+                  <h4>
+                    De cele mai multe ori, rezolvarea unei probleme folosind metoda bcaktracking constă în următoarele:
+                  </h4>
+                  <ul class="list-group">
+                    <li class="list-group-item">stabilirea semnificației vectorului soluție</li>
+                    <li class="list-group-item">stabilirea condițiilor externe</li>
+                    <li class="list-group-item">stabilirea condițiilor interne</li>
+                    <li class="list-group-item">stabilirea condițiilor de existența a soluției finale</li>
+                    <li class="list-group-item">completarea adecvată a șablonului de mai sus!</li>
+                    
+                  </ul>
+
+                  <h4>
+                    Complexitatea algoritmului
+                  </h4>
+
+                  <p>
+                    Algoritmii Backtracking sunt exponențiali. Complexitatea depinde de la problemă la problemă dar este de tipul O(an). De exemplu:
+                  </p>
+
+                  <ul class="list-group">
+                    <li class="list-group-item">generarea permutărilor unei mulțimi cu n elemente are complexitatea O(n⋅n!);</li>
+                    <li class="list-group-item">generarea submulțimilor unei mulțimi cu n elemente are complexitatea O(2n)</li>
+                    <li class="list-group-item">produsul cartezian An unde mulțimea A={1,2,3,…,m} are complexitatea O(mn)</li>
+
+                    
+                  </ul>
+
+
+
+
+
+            </div>
+
+          </div>
+
+
+
+    </div>
+    <footer class="page-footer font-small blue">
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://alexandrapricop.github.io/portfolio/">PRICOP ALEXANDRA-GEORGIANA</a>
+      </div>
+  </footer>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</body>
+</html>
