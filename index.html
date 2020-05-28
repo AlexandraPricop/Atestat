@@ -1,116 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/brands.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Rock+Salt&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">  
-    <link rel="stylesheet" href="./style/main.css">
-    <title>Acasa</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/brands.min.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Rock+Salt&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style/main.css" />
+  <title>Acasa</title>
 </head>
-<body> 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.html">
-             <span class="logo">
-                <i class="fas fa-laptop-code"></i>
-             </span>   
+
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html">
+        <span class="logo">
+          <i class="fas fa-laptop-code"></i>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/backtracking.html">Backtracking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/greedy.html">Greedy</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Grafuri
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/backtracking.html">Backtracking</a>
-                  </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./pages/greedy.html">Greedy</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Grafuri
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./pages/grafuri-neorientate.html">Grafuri Neorientate</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="./pages/grafuri-orientate.html">Grafuri Orientate</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./pages/tutoriale.html">Tutoriale</a>
-                </li>
-              </ul>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="./pages/grafuri-neorientate.html">Grafuri Neorientate</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="./pages/grafuri-orientate.html">Grafuri Orientate</a>
             </div>
-          </nav>
-    </header>
-    <div class="hero-image">
-      <div class="hero-text">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/tutoriale.html">Tutoriale</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="hero-image">
 
-        <div style="background-image: url(./media/code1.jpg);" class="slide">
-            <div class="slide-text">
-              <span>
-                "Programs must be written for people to read, and only incidentally for machines to execute."
-              </span> 
-            </div>
+    <div class="hero-text slider">
+      <div style="background-image: url(./media/code1.jpg);" class="slide">
+        <div class="slide-text">
+          <span>
+            "Programs must be written for people to read, and only
+            incidentally for machines to execute."
+          </span>
         </div>
-        <div   style="background-image: url(./media/code2.jpg);"  class="slide">
-          <div class="slide-text">
-            <span>
-              "Talk is cheap. Show me the code."
-            </span>
-
-          </div>
+      </div>
+      <div style="background-image: url(./media/code2.jpg);" class="slide">
+        <div class="slide-text">
+          <span>
+            "Talk is cheap. Show me the code."
+          </span>
         </div>
-        <div  style="background-image: url(./media/code3.jpg);"  class="slide">
-          <div class="slide-text">
-            <span>
-              "Programming isn't about what you know; it's about what you can figure out."
-            </span>
-
-          </div>
+      </div>
+      <div style="background-image: url(./media/code3.jpg);" class="slide">
+        <div class="slide-text">
+          <span>
+            "Programming isn't about what you know; it's about what you can
+            figure out."
+          </span>
         </div>
-        <div  style="background-image: url(./media/code4.jpg);"  class="slide">
-          <div class="slide-text">
-            <span>
-              "The most damaging phrase in the language is.. it's always been done this way."
-            </span>
-
-          </div>
+      </div>
+      <div style="background-image: url(./media/code4.jpg);" class="slide">
+        <div class="slide-text">
+          <span>
+            "The most damaging phrase in the language is.. it's always been
+            done this way."
+          </span>
         </div>
-
-
       </div>
     </div>
-    <div class="container">
 
-
-
-
-    </div>
-    <footer class="page-footer font-small blue">
-      <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://alexandrapricop.github.io/portfolio/">Alexandra-Georgiana Pricop</a>
-      </div>
-  </footer>
 
 
     
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="./scripts/script.js"></script>
+  <footer class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-3">
+      © 2020 Copyright:
+      <a href="https://alexandrapricop.github.io/portfolio/">Alexandra-Georgiana Pricop</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./scripts/script.js"></script>
 </body>
+
 </html>
